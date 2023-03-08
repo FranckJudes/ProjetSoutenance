@@ -49,7 +49,7 @@
             </a>
             <ul id="ddmenu_1" class="collapse show dropdown-nav">
               <li>
-                <a href="index.html" class="active"> eCommerce </a>
+                <a href="{{url('/')}}" class="active"> Acceuil </a>
               </li>
             </ul>
           </li>
@@ -65,26 +65,16 @@
               aria-label="Toggle navigation"
             >
               <span class="icon">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12.9067 14.2908L15.2808 11.9167H6.41667V10.0833H15.2808L12.9067 7.70917L14.2083 6.41667L18.7917 11L14.2083 15.5833L12.9067 14.2908ZM17.4167 2.75C17.9029 2.75 18.3692 2.94315 18.713 3.28697C19.0568 3.63079 19.25 4.0971 19.25 4.58333V8.86417L17.4167 7.03083V4.58333H4.58333V17.4167H17.4167V14.9692L19.25 13.1358V17.4167C19.25 17.9029 19.0568 18.3692 18.713 18.713C18.3692 19.0568 17.9029 19.25 17.4167 19.25H4.58333C3.56583 19.25 2.75 18.425 2.75 17.4167V4.58333C2.75 3.56583 3.56583 2.75 4.58333 2.75H17.4167Z"
-                  />
-                </svg>
+                <i class="lni lni-upload"></i>
               </span>
-              <span class="text">Auth</span>
+              <span class="text">Import</span>
             </a>
             <ul id="ddmenu_3" class="collapse dropdown-nav">
               <li>
-                <a href="signin.html"> Sign In </a>
+                <a href="{{url('PageImportImage')}}"> Image </a>
               </li>
               <li>
-                <a href="signup.html"> Sign Up </a>
+                <a href="{{url('PageImportExcel')}}"> Excel </a>
               </li>
             </ul>
           </li>
@@ -339,7 +329,7 @@
                   >
                     <div class="profile-info">
                       <div class="info">
-                        <h6>John Doe</h6>
+                        <h6>Admin</h6>
                         <div class="image">
                           <img
                             src="assets/images/profile/profile-image.png"
@@ -392,12 +382,26 @@
             <div class="row align-items-center">
               <div class="col-md-6">
                 <div class="title mb-30">
-                  <h2>Page d'acceuil</h2>
+                      @yield('title') 
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="breadcrumb-wrapper mb-30">
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item">
+                          @yield('GrandTitre')
+                      </li>
+                      <li class="breadcrumb-item active" aria-current="page">
+                         @yield('SousTitre')
+                      </li>
+                    </ol>
+                  </nav>
                 </div>
               </div>
               
             </div>
-            <!-- end row -->
+            
           </div>
           <!-- ========== title-wrapper end ========== -->
           <div class="row">
@@ -407,24 +411,16 @@
             <!-- End Col -->
             <div class="col-xl-12 col-lg-12 col-sm-12">
               <div class="icon-card mb-30">
-                <div class="icon primary">
-                  <i class="lni lni-credit-cards"></i>
-                </div>
-                <div class="content">
-                  {{-- <h6 class="mb-10">Total Expense</h6>
-                  <h3 class="text-bold mb-10">$24,567</h3> --}}
-                  <p class="text-sm text-danger">
-                    {{-- <i class="lni lni-arrow-down"></i> -2.00%
-                    <span class="text-gray">Expense</span> --}}
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem autem sint excepturi quo at nihil amet illum repellendus laboriosam aperiam libero corporis maiores, doloribus alias expedita molestiae nulla atque? Iste atque modi expedita eaque, reiciendis ut, dolorem sunt corporis libero quibusdam beatae. Quas quam ut repudiandae? Mollitia quidem quibusdam nisi recusandae nesciunt dolore voluptatum deserunt temporibus vero optio beatae, aliquam ad vitae laudantium ipsa adipisci officiis tempore fugiat deleniti quasi quod incidunt iusto totam quos! Totam nulla consequuntur doloribus ipsa perspiciatis possimus officia, voluptatem sunt accusantium esse aut? Magnam, corrupti sit quia architecto et sequi, exercitationem obcaecati fugit suscipit vitae fugiat cupiditate nam ex id ipsa assumenda at ullam atque tenetur dignissimos. Inventore dolores, fugiat placeat labore dolorum fugit accusamus, officiis autem necessitatibus dolor iure modi repellendus iusto! Perferendis nihil dolorem eos deserunt eius totam similique expedita autem magni eveniet non minus modi obcaecati, error quisquam fugit qui ipsa. Tenetur repudiandae et ipsam rem vero quasi, nisi soluta beatae sint modi nemo quo cum, eveniet laboriosam! Dolorem nostrum cum exercitationem obcaecati cumque quae fugit praesentium ipsum beatae nesciunt iste sint eum, eveniet voluptatibus amet ea facilis inventore officiis ad in vitae facere itaque! Velit, nihil ab possimus odit iure neque.
-                  </p>
+                <div class="container-fluid">
+                  
+                    @yield('content')
+                    {{-- Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem autem sint excepturi quo at nihil amet illum repellendus laboriosam aperiam libero corporis maiores, doloribus alias expedita molestiae nulla atque? Iste atque modi expedita eaque, reiciendis ut, dolorem sunt corporis libero quibusdam beatae. Quas quam ut repudiandae? Mollitia quidem quibusdam nisi recusandae nesciunt dolore voluptatum deserunt temporibus vero optio beatae, aliquam ad vitae laudantium ipsa adipisci officiis tempore fugiat deleniti quasi quod incidunt iusto totam quos! Totam nulla consequuntur doloribus ipsa perspiciatis possimus officia, voluptatem sunt accusantium esse aut? Magnam, corrupti sit quia architecto et sequi, exercitationem obcaecati fugit suscipit vitae fugiat cupiditate nam ex id ipsa assumenda at ullam atque tenetur dignissimos. Inventore dolores, fugiat placeat labore dolorum fugit accusamus, officiis autem necessitatibus dolor iure modi repellendus iusto! Perferendis nihil dolorem eos deserunt eius totam similique expedita autem magni eveniet non minus modi obcaecati, error quisquam fugit qui ipsa. Tenetur repudiandae et ipsam rem vero quasi, nisi soluta beatae sint modi nemo quo cum, eveniet laboriosam! Dolorem nostrum cum exercitationem obcaecati cumque quae fugit praesentium ipsum beatae nesciunt iste sint eum, eveniet voluptatibus amet ea facilis inventore officiis ad in vitae facere itaque! Velit, nihil ab possimus odit iure neque. --}}
+                 
                 </div>
               </div>
-              <!-- End Icon Cart -->
+             
             </div>
-            <!-- End Col -->
-           
-              <!-- End Icon Cart -->
+            
             </div>
             <!-- End Col -->
           </div>
@@ -452,14 +448,7 @@
             <div class="col-md-6 order-last order-md-first">
               <div class="copyright text-center text-md-start">
                 <p class="text-sm">
-                  Designed and Developed by
-                  <a
-                    href="https://plainadmin.com"
-                    rel="nofollow"
-                    target="_blank"
-                  >
-                    PlainAdmin
-                  </a>
+                  Copyright © 2023-2024 Administration Ngoa EKelle. All rights reserved
                 </p>
               </div>
             </div>
@@ -472,8 +461,8 @@
                   justify-content-center justify-content-md-end
                 "
               >
-                <a href="#0" class="text-sm">Term & Conditions</a>
-                <a href="#0" class="text-sm ml-15">Privacy & Policy</a>
+                
+                <a href="#0" class="text-sm ml-15"> Version 1.0.0 </a>
               </div>
             </div>
           </div>

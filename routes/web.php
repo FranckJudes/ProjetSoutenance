@@ -13,6 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('login', function () {
+    return view('FontEnd.login');
+});
+Route::get('register', function () {
+    return view('FontEnd.register');
+});
+Route::get('PageImportImage', function () {
+    return view('Admin.PageImportImage');
+});
+Route::get('PageImportExcel', function () {
+    return view('Admin.PageImportExcel');
+});
 Route::get('/', function () {
-    return view('Admin.main-layout');
+    return view('Admin.DashboardAcceuil');
 });
