@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\ImportationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,12 +20,17 @@ Route::get('login', function () {
 Route::get('register', function () {
     return view('FontEnd.register');
 });
-Route::get('PageImportImage', function () {
-    return view('Admin.PageImportImage');
-});
+
 Route::get('PageImportExcel', function () {
     return view('Admin.PageImportExcel');
 });
 Route::get('/', function () {
     return view('Admin.DashboardAcceuil');
+});
+
+Route::controller(ImportationController::class)->group(function(){
+    Route::get('PageImportImage','index')->name('PageImportImage');
+    Route::post('ajoutDocument','store')->name('ajouter'); 
+    Route::get('deleteImage/{id}','deleteImage')->name('delete');
+
 });

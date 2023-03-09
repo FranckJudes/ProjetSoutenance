@@ -13,27 +13,37 @@
     <div class="row container">
       <div class="col-12">
         <!-- input style start -->
-        <div class="card-style mb-30">
-          <h6 class="mb-25">Input Fields</h6>
-          <div class="input-style-1 col">
-            <label>Titre</label>
-            <input type="text" placeholder="Titre"/>
+        <form action="{{route('ajouter')}}" method="post" enctype="multipart/form-data">
+          @csrf
+          <div class="card-style mb-30">
+            <h6 class="mb-25">Input Fields</h6>
+            <div class="input-style-1 col">
+              <label>Titre</label>
+              <input type="text" name="titre"placeholder="Titre"/>
+              @if($errors->has('titre'))
+                   <span class="text-danger">{{ $errors->first('titre') }}</span>
+               @endif
+            </div>
+            <!-- end input -->
+            <div class="input-style-1 col">
+              <label>Description</label>
+              <input type="hidden" name="datePublication"/>
+              <input type="text" name="description" placeholder="Description" />
+              @if ($errors->has('description'))
+                  <span class="text-danger">{{ $errors->first('description') }}</span>
+             @endif
+            </div>
+            <!-- end input -->
+            <div class="input-style-1 col">
+                  <label>Selectionner L' Image :</label>
+                  <input type="file" name="images[]" placeholder="Full Name"  accept="image/*" multiple/>
+            </div>
+            <!-- end input -->
+            <div class="input-style-1 col">
+              <button class="main-btn deactive-btn  w-100 text-center square-btn btn-hover" type="submit">Soumettre</button>
+            </div>
           </div>
-          <!-- end input -->
-          <div class="input-style-1 col">
-            <label>Description</label>
-            <input type="text" placeholder="Description" />
-          </div>
-          <!-- end input -->
-          <div class="input-style-1 col">
-            <label>Full Name</label>
-            <input type="file" placeholder="Full Name" multiple/>
-          </div>
-          <!-- end input -->
-          <div class="input-style-1 col">
-            <button class="main-btn deactive-btn  w-100 text-center square-btn btn-hover">Soumettre</button>
-          </div>
-        </div>
+        </form>  
 
         <div class="card-style mb-30">
             <h6 class="mb-10">Documents</h6>
@@ -52,22 +62,23 @@
                   <!-- end table row-->
                 </thead>
                 <tbody>
+                  @forelse ($document as $product) 
                   <tr>
                     <td class="min-width">
                       <div class="lead">
                         <div class="lead-text">
-                          <p>Courtney Henry</p>
+                          <p>{{$product->titre}}</p>
                         </div>
                       </div>
                     </td>
                     <td class="min-width">
-                      <p><a href="#0">yourmail@gmail.com</a></p>
+                      <p>{{$product->description}}</p>
                     </td>
                     <td class="min-width">
-                      <p>(303)555 3343523</p>
+                      <p>{{$product->images->count()}}</p>
                     </td>
                     <td class="min-width">
-                      <p>UIdeck digital agency</p>
+                      <p>{{$product->datePublication}}</p>
                     </td>
                     <td>
                       <div class="action">
@@ -85,17 +96,21 @@
                               aria-labelledby="moreAction1"
                             >
                               <li class="dropdown-item">
-                                <a href="#0" class="text-gray">Remove</a>
+                                <a href="{{url('deleteImage',$product->id)}}" class="text-gray">Remove</a>
                               </li>
                               <li class="dropdown-item">
-                                <a href="#0" class="text-gray">Edit</a>
+                                <a href="{{url('AffichageDocImage',$product->id)}}" class="text-gray">view</a>
                               </li>
                             </ul>
                           </div>
                       </div>
                     </td>
                   </tr>
-                 
+                  @empty
+                    <tr>
+                        <td colspan="5" class="text-center">Aucun document</td>
+                    </tr>
+                  @endforelse
                 </tbody>
               </table>
               <!-- end table -->
