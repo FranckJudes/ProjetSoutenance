@@ -75,7 +75,7 @@
                       <p>{{$product->description}}</p>
                     </td>
                     <td class="min-width">
-                      <p>{{$product->images->count()}}</p>
+                      <p>{{$product->images->count( )}}</p>
                     </td>
                     <td class="min-width">
                       <p>{{$product->datePublication}}</p>

@@ -11,7 +11,7 @@
     />
     <title>Sign Up </title>
 
-    <!-- ========== All CSS files linkup ========= -->
+    <!-- ====indexF====== All CSS files linkup ========= -->
     <link rel="stylesheet" href="{{'assets/css/bootstrap.min.css'}}" />
     <link rel="stylesheet" href="{{'assets/css/lineicons.css'}}" />
     <link rel="stylesheet" href="{{'assets/css/materialdesignicons.min.css'}}" />
@@ -39,7 +39,7 @@
         <div class="row g-0 ">
             <div class="col-lg-6">
               <div class="auth-cover-wrapper bg-primary-100">
-                <div class="auth-cover">
+                indexFindexF   <div class="auth-cover">
                   <div class="title text-center">
                     <h1 class="text-primary mb-10">Get Started</h1>
                     <p class="text-medium">

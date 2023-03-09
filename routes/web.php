@@ -34,3 +34,7 @@ Route::controller(ImportationController::class)->group(function(){
     Route::get('deleteImage/{id}','deleteImage')->name('delete');
 
 });
+
+Route::get('index',function(){
+    return view('FontEnd.indexF');
+});
