@@ -25,75 +25,40 @@
           <div class="row">
             <div class="col-12">
               <div class="title mt-30 mb-30">
-                <h2>Cards</h2>
               </div>
             </div>
             <!-- end col -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div class="card-style-2 mb-30">
-                <div class="card-image">
-                  <a href="#0">
-                    <img
-                      src="assets/images/cards/card-style-2/card-1.jpg"
-                      alt=""
-                    />
-                  </a>
+           <div class="row" id="allData">
+              @foreach ($documents as $document)
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 ">
+                  <div class="card-style-2 mb-30 ">
+                    <div class="card-image">
+                      <a href="#">
+                        <img
+                          src="/Documents_images/{{$document->images->value(0)}}"
+                          alt=""
+                        />
+                      </a>
+                    </div>
+                    <div class="card-content">
+                      <h4><a href="#">{{$document->titre}}</a></h4>
+                      <p>
+                        {{$document->description}}
+                      </p>
+                      <p>{{$document->datePublication}} </p>
+                        <a class="main-btn deactive-btn  w-100 text-center square-btn btn-hover mt-1" href="{{url('viewID',$document->id)}}" type="submit">Visualiser </a>
+                    </div>
+                  </div>
                 </div>
-                <div class="card-content">
-                  <h4><a href="#0">Communiquer </a></h4>
-                  <p>
-                    consectetur adipiscing elit. Integer
-                    posuere erat a ante.
-                  </p>
-                  <p>12-02-2022</p>
-                </div>
-              </div>
-            </div>
-            <!-- end col -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div class="card-style-2 mb-30">
-                <div class="card-image">
-                  <a href="#0">
-                    <img
-                      src="assets/images/cards/card-style-2/card-2.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-                <div class="card-content">
-                  <h4><a href="#0">Liste de Selection </a></h4>
-                  <p>
-                    consectetur adipiscing elit. Integer
-                    posuere erat a ante.
-                  </p>
-                  <p>12-02-2022</p>
-                </div>
-              </div>
-            </div>
-            <!-- end col -->
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
-              <div class="card-style-2 mb-30">
-                <div class="card-image">
-                  <a href="#0">
-                    <img
-                      src="assets/images/cards/card-style-2/card-3.jpg"
-                      alt=""
-                    />
-                  </a>
-                </div>
-                <div class="card-content">
-                  <h4><a href="#0">Notes  </a></h4>
-                  <p>
-                    consectetur adipiscing elit. Integer
-                    posuere erat a ante.
-                  </p>
-                  <p>12-02-2022</p>
-                </div>
-              </div>
-            </div>
+              @endforeach   
+           </div>
+            <div  class="row" class="Datagram" id="Content"></div>
+              
           </div>
-          
-      
+         <div class="d-sm-flex align-items-center justify-content-between mb-4">
+            <h1 class="h3 mb-0 text-gray-800"></h1>
+              {{ $documents->render() }}
+        </div>
       </div>
      
     </div>

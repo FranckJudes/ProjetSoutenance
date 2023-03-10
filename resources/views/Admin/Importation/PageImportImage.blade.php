@@ -75,7 +75,7 @@
                       <p>{{$product->description}}</p>
                     </td>
                     <td class="min-width">
-                      <p>{{$product->images->count( )}}</p>
+                      <p>{{$product->images->count() }}</p>
                     </td>
                     <td class="min-width">
                       <p>{{$product->datePublication}}</p>
@@ -99,8 +99,8 @@
                                 <a href="{{url('deleteImage',$product->id)}}" class="text-gray">Remove</a>
                               </li>
                               <li class="dropdown-item">
-                                <a href="{{url('AffichageDocImage',$product->id)}}" class="text-gray">view</a>
-                              </li>
+                                <a href="{{url('viewUpload',$product->id)}}" class="text-gray">view</a>
+                   
                             </ul>
                           </div>
                       </div>

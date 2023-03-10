@@ -12,8 +12,9 @@ class ImportationController extends Controller
     //
 
     public function index(){
-        $document =  Document::all();
-        return view('Admin.PageImportImage',compact('document'));
+      $document = Document::all();
+    
+        return view('Admin.Importation.PageImportImage',compact('document'));
     }
 
     public function store(Request $request){
@@ -24,6 +25,7 @@ class ImportationController extends Controller
             'description' => 'required',
             
         ]);
+        
         $txt = date("Y-m-d H:i:s");
         $new_doc = Document::create([
             'titre' => $request->titre,
@@ -53,4 +55,71 @@ class ImportationController extends Controller
         return redirect()->back()->with('success','Documents supprimer avec succes');
 
     }
+    public function indexPage()
+    {
+         $documents = Document::paginate(4);
+         return view('FontEnd.indexF',compact('documents'));
+
+    }
+   
+        public function search(Request $request)
+        {
+          $output = '';
+          $documents = Document::where('titre','Like','%'.$request->search.'%')
+                                ->orWhere('description','Like','%'.$request->search.'%')->get();
+                                
+              foreach ($documents as $document) 
+                {
+                    $output.=   
+                    ' <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 ">
+                        <div class="card-style-2 mb-30">
+                          <div class="card-image">
+                            <a href="#0">
+                              <img
+                                src="'.$document->images->value(1).'"
+                                alt=""
+                              />
+                            </a>
+                          </div>
+                          <div class="card-content">
+                              <h4><a href="#">'.$document->titre.'</a></h4>
+                              <p>
+                                '.$document->description.'
+                              </p>
+                              <p>'.$document->datePublication.' </p>
+                                <a class="main-btn deactive-btn  w-100 text-center square-btn btn-hover mt-1" href="'. url("/viewID/".$document->id ).'"type="submit">Visualiser </a>
+                          </div>
+                        </div>
+                      </div>';
+                      
+                      
+                }
+                //"/ {{ "/ url("/'viewID'/".$document->id ) ."/ }}"/
+                
+                return response($output);
+        }
+
+        function displayImage()
+        {
+          return view('FontEnd.displayImage');
+        }
+        public function viewImg($id)
+        {
+          
+          return view('Admin.Importation.viewImage');
+        }
+        function PageImportExcel(){
+
+          return view('Admin.Importation.PageImportExcel');
+        }
+       
+        function viewImageId($id)
+        { 
+          // dd($id);
+          $doc = Document::find($id);
+          if(!$doc) abort(404);
+          $images = $doc->images;
+          return view('FontEnd.displayImage',compact('doc','images'));
+        }
+    
 }

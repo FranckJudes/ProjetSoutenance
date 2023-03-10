@@ -6,25 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="assets/images/favicon.svg"
+      href="/assets/images/favicon.svg"
       type="image/x-icon"
     />
     <title>PlainAdmin</title>
 
     <!-- ========== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="{{'assets/css/bootstrap.min.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/lineicons.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/materialdesignicons.min.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/fullcalendar.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/fullcalendar.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/main.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/bootstrap.min.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/lineicons.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/materialdesignicons.min.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/fullcalendar.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/fullcalendar.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/main.css'}}" />
   </head>
   <body>
     <!-- ======== sidebar-nav start =========== -->
     <aside class="sidebar-nav-wrapper">
       <div class="navbar-logo">
         <a href="index.html">
-          <img src="assets/images/logo/logo.svg" alt="logo" />
+          <img src="/assets/images/logo/logo.svg" alt="logo" />
         </a>
       </div>
       <nav class="sidebar-nav">
@@ -79,76 +79,8 @@
             </ul>
           </li>
           <span class="divider"><hr /></span>
-          
-          <li class="nav-item nav-item-has-children">
-            <a
-              href="#0"
-              class="collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#ddmenu_55"
-              aria-controls="ddmenu_55"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="icon">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1.83325 19.25V17.4167H18.3333V19.25H1.83325ZM18.3333 7.33333V4.58333H16.4999V7.33333H18.3333ZM18.3333 2.75C18.8195 2.75 19.2858 2.94315 19.6296 3.28697C19.9734 3.63079 20.1666 4.0971 20.1666 4.58333V7.33333C20.1666 7.81956 19.9734 8.28588 19.6296 8.6297C19.2858 8.97351 18.8195 9.16667 18.3333 9.16667H16.4999V11.9167C16.4999 12.8891 16.1136 13.8218 15.426 14.5094C14.7383 15.197 13.8057 15.5833 12.8333 15.5833H7.33325C6.36079 15.5833 5.42816 15.197 4.74053 14.5094C4.05289 13.8218 3.66659 12.8891 3.66659 11.9167V2.75H18.3333ZM14.6666 4.58333H5.49992V11.9167C5.49992 12.4029 5.69307 12.8692 6.03689 13.213C6.38071 13.5568 6.84702 13.75 7.33325 13.75H12.8333C13.3195 13.75 13.7858 13.5568 14.1296 13.213C14.4734 12.8692 14.6666 12.4029 14.6666 11.9167V4.58333Z"
-                  />
-                </svg>
-              </span>
-              <span class="text">Icons</span>
-            </a>
-            <ul id="ddmenu_55" class="collapse dropdown-nav">
-              <li>
-                <a href="icons.html"> LineIcons </a>
-              </li>
-              <li>
-                <a href="mdi-icons.html"> MDI Icons </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item nav-item-has-children">
-            <a
-              href="#0"
-              class="collapsed"
-              data-bs-toggle="collapse"
-              data-bs-target="#ddmenu_5"
-              aria-controls="ddmenu_5"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span class="icon">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 22 22"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M13.75 4.58325H16.5L15.125 6.41659L13.75 4.58325ZM4.58333 1.83325H17.4167C18.4342 1.83325 19.25 2.65825 19.25 3.66659V18.3333C19.25 19.3508 18.4342 20.1666 17.4167 20.1666H4.58333C3.575 20.1666 2.75 19.3508 2.75 18.3333V3.66659C2.75 2.65825 3.575 1.83325 4.58333 1.83325ZM4.58333 3.66659V7.33325H17.4167V3.66659H4.58333ZM4.58333 18.3333H17.4167V9.16659H4.58333V18.3333ZM6.41667 10.9999H15.5833V12.8333H6.41667V10.9999ZM6.41667 14.6666H15.5833V16.4999H6.41667V14.6666Z"
-                  />
-                </svg>
-              </span>
-              <span class="text"> Forms </span>
-            </a>
-            <ul id="ddmenu_5" class="collapse dropdown-nav">
-              <li>
-                <a href="form-elements.html"> From Elements </a>
-              </li>
-            </ul>
-          </li> 
-          <span class="divider"><hr /></span>
-
           <li class="nav-item">
-            <a href="notification.html">
+            <a href="#">
               <span class="icon">
                 <svg
                   width="22"
@@ -198,120 +130,9 @@
             <div class="col-lg-7 col-md-7 col-6">
               <div class="header-right">
                 <!-- notification start -->
-                <div class="notification-box ml-15 d-none d-md-flex">
-                  <button
-                    class="dropdown-toggle"
-                    type="button"
-                    id="notification"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="lni lni-alarm"></i>
-                    <span>2</span>
-                  </button>
-                  <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="notification"
-                  >
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="assets/images/lead/lead-6.png" alt="" />
-                        </div>
-                        <div class="content">
-                          <h6>
-                            John Doe
-                            <span class="text-regular">
-                              comment on a product.
-                            </span>
-                          </h6>
-                          <p>
-                            Lorem ipsum dolor sit amet, consect etur adipiscing
-                            elit Vivamus tortor.
-                          </p>
-                          <span>10 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="assets/images/lead/lead-1.png" alt="" />
-                        </div>
-                        <div class="content">
-                          <h6>
-                            Jonathon
-                            <span class="text-regular">
-                              like on a product.
-                            </span>
-                          </h6>
-                          <p>
-                            Lorem ipsum dolor sit amet, consect etur adipiscing
-                            elit Vivamus tortor.
-                          </p>
-                          <span>10 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+               
                 <!-- notification end -->
                 <!-- message start -->
-                <div class="header-message-box ml-15 d-none d-md-flex">
-                  <button
-                    class="dropdown-toggle"
-                    type="button"
-                    id="message"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <i class="lni lni-envelope"></i>
-                    <span>3</span>
-                  </button>
-                  <ul
-                    class="dropdown-menu dropdown-menu-end"
-                    aria-labelledby="message"
-                  >
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="assets/images/lead/lead-5.png" alt="" />
-                        </div>
-                        <div class="content">
-                          <h6>Jacob Jones</h6>
-                          <p>Hey!I can across your profile and ...</p>
-                          <span>10 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="assets/images/lead/lead-3.png" alt="" />
-                        </div>
-                        <div class="content">
-                          <h6>John Doe</h6>
-                          <p>Would you mind please checking out</p>
-                          <span>12 mins ago</span>
-                        </div>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#0">
-                        <div class="image">
-                          <img src="assets/images/lead/lead-2.png" alt="" />
-                        </div>
-                        <div class="content">
-                          <h6>Anee Lee</h6>
-                          <p>Hey! are you available for freelance?</p>
-                          <span>1h ago</span>
-                        </div>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-                <!-- message end -->
-                <!-- filter start -->
                 <div class="filter-box ml-15 d-none d-md-flex">
                   <button class="" type="button" id="filter">
                     <i class="lni lni-funnel"></i>
@@ -332,7 +153,7 @@
                         <h6>Admin</h6>
                         <div class="image">
                           <img
-                            src="assets/images/profile/profile-image.png"
+                            src="/assets/images/profile/profile-image.png"
                             alt=""
                           />
                           <span class="status"></span>
@@ -475,15 +296,15 @@
     <!-- ======== main-wrapper end =========== -->
 
     <!-- ========= All Javascript files linkup ======== -->
-    <script src="{{'assets/js/bootstrap.bundle.min.js'}}"></script>
-    <script src="{{'assets/js/Chart.min.js'}}"></script>
-    <script src="{{'assets/js/dynamic-pie-chart.js'}}"></script>
-    <script src="{{'assets/js/moment.min.js'}}"></script>
-    <script src="{{'assets/js/fullcalendar.js'}}"></script>
-    <script src="{{'assets/js/jvectormap.min.js'}}"></script>
-    <script src="{{'assets/js/world-merc.js'}}"></script>
-    <script src="{{'assets/js/polyfill.js'}}"></script>
-    <script src="{{'assets/js/main.js'}}"></script>
+    <script src="{{'/assets/js/bootstrap.bundle.min.js'}}"></script>
+    <script src="{{'/assets/js/Chart.min.js'}}"></script>
+    <script src="{{'/assets/js/dynamic-pie-chart.js'}}"></script>
+    <script src="{{'/assets/js/moment.min.js'}}"></script>
+    <script src="{{'/assets/js/fullcalendar.js'}}"></script>
+    <script src="{{'/assets/js/jvectormap.min.js'}}"></script>
+    <script src="{{'/assets/js/world-merc.js'}}"></script>
+    <script src="{{'/assets/js/polyfill.js'}}"></script>
+    <script src="{{'/assets/js/main.js'}}"></script>
 
     <script>
       // ======== jvectormap activation

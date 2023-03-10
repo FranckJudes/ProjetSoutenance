@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\DisplayController;
 use App\Http\Controllers\Auth\ImportationController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,9 +22,7 @@ Route::get('register', function () {
     return view('FontEnd.register');
 });
 
-Route::get('PageImportExcel', function () {
-    return view('Admin.PageImportExcel');
-});
+
 Route::get('/', function () {
     return view('Admin.DashboardAcceuil');
 });
@@ -32,9 +31,16 @@ Route::controller(ImportationController::class)->group(function(){
     Route::get('PageImportImage','index')->name('PageImportImage');
     Route::post('ajoutDocument','store')->name('ajouter'); 
     Route::get('deleteImage/{id}','deleteImage')->name('delete');
+    Route::get('index','indexPage')->name('indexPage');
+    Route::get('search','search')->name('searchData');
+    Route::get('PageImportExcel','PageImportExcel')->name('PageImportExcel');
+    Route::get('viewID/{id}','viewImageId')->name('viewImageId');
 
 });
 
-Route::get('index',function(){
-    return view('FontEnd.indexF');
+
+Route::controller(DisplayController::class)->group(function(){
+    Route::get('display','display')->name('display');
+    Route::get('viewUpload/{id}','viewUpload')->name('viewUpload');
+
 });

@@ -6,18 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="assets/images/favicon.svg"
+      href="/assets/images/favicon.svg"
       type="image/x-icon"
     />
     <title>Aceuil</title>
-
-    <!-- ====indexF====== All CSS files linkup ========= -->
-    <link rel="stylesheet" href="{{'assets/css/bootstrap.min.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/lineicons.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/materialdesignicons.min.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/fullcalendar.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/fullcalendar.css'}}" />
-    <link rel="stylesheet" href="{{'assets/css/main.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/bootstrap.min.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/lineicons.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/materialdesignicons.min.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/fullcalendar.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/fullcalendar.css'}}" />
+    <link rel="stylesheet" href="{{'/assets/css/main.css'}}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   </head>
  <body>
     <main>
@@ -62,17 +61,48 @@
         
     </main>
 
+    <script type="text/javascript">
 
+      $('#search').on('keyup',function()
+      {
+        $value = $(this).val();
+      
+        if ($value) {
+               $('#allData').hide();
+               $('#Content').show();
+            }else
+            {
+              $('#allData').show();
+              $('#Content').hide();
+            }
 
-  <script src="{{'assets/js/bootstrap.bundle.min.js'}}"></script>
-  <script src="{{'assets/js/Chart.min.js'}}"></script>
-  <script src="{{'assets/js/dynamic-pie-chart.js'}}"></script>
-  <script src="{{'assets/js/moment.min.js'}}"></script>
-  <script src="{{'assets/js/fullcalendar.js'}}"></script>
-  <script src="{{'assets/js/jvectormap.min.js'}}"></script>
-  <script src="{{'assets/js/world-merc.js'}}"></script>
-  <script src="{{'assets/js/polyfill.js'}}"></script>
-  <script src="{{'assets/js/main.js'}}"></script>
+        $.ajax({
+
+            type : 'get',
+            url : '{{URL:: to('search')}}',
+            data: {'search':$value},
+
+            success:function(data)
+            {  
+              console.log(data);
+              $('#Content ').html(data);
+            },
+   
+      
+        });
+      });
+      </script>
+  <script src="{{'/assets/js/bootstrap.bundle.min.js'}}"></script>
+  <script src="{{'/assets/js/Chart.min.js'}}"></script>
+  <script src="{{'/assets/js/dynamic-pie-chart.js'}}"></script>
+  <script src="{{'/assets/js/moment.min.js'}}"></script>
+  <script src="{{'/assets/js/fullcalendar.js'}}"></script>
+  <script src="{{'/assets/js/jvectormap.min.js'}}"></script>
+  <script src="{{'/assets/js/world-merc.js'}}"></script>
+  <script src="{{'/assets/js/polyfill.js'}}"></script>
+  <script src="{{'/assets/js/main.js'}}"></script>
 
 </body>
+
+ 
 </html>
