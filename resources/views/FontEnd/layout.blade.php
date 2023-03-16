@@ -9,7 +9,9 @@
       href="/assets/images/favicon.svg"
       type="image/x-icon"
     />
-    <title>Aceuil</title>
+    <title>Acceuil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />
     <link rel="stylesheet" href="{{'/assets/css/bootstrap.min.css'}}" />
     <link rel="stylesheet" href="{{'/assets/css/lineicons.css'}}" />
     <link rel="stylesheet" href="{{'/assets/css/materialdesignicons.min.css'}}" />
@@ -25,8 +27,8 @@
               <a  href="" class="navbar-brand">BABILLARD NUMERIQUE</a>
               <form class="d-flex">
                 @guest
-                  <a href="" class="btn btn-outline-primary me-4" type="submit">Se Connecter</a>
-                  <a  href="" class="btn btn-outline-success me-4" type="submit">S'inscrire</a>
+                  <a href="{{url('login')}}" class="btn btn-outline-primary me-4" type="submit">Se Connecter</a>
+                  <a  href="{{url('register')}}" class="btn btn-outline-success me-4" type="submit">S'inscrire</a>
                 @else
                   <a  href="" class="btn btn-outline-primary me-4" type="submit">Se Deconnecter</a>
                 @endguest
@@ -37,7 +39,7 @@
 
       <div class="container text-center">
         <div class="container">
-          <H1 class="text-center m-2"><i class="lni lni-nodepad"></i>UNIVERSITE DE YAOUNDE I</H1>
+          <H1 class="text-center m-2"> <i class="far fa-list-alt p-1"></i>UNIVERSITE DE YAOUNDE I</H1>
         </div>
         <div class="container p-3">
           <p> DEPARTEMENT INFORMATIQUE - FACULTES DES SCIENCES</p>

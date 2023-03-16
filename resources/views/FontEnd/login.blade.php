@@ -158,7 +158,7 @@
                     </div>
                     <p class="text-sm text-medium text-dark text-center">
                       Don’t have any account yet?
-                      <a href="signup.html">Create an account</a>
+                      <a href="{{url('register')}}">Create an account</a>
                     </p>
                   </div>
                 </div>

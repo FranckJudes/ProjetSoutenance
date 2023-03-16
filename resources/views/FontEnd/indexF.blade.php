@@ -34,8 +34,11 @@
                   <div class="card-style-2 mb-30 ">
                     <div class="card-image">
                       <a href="#">
+                        @php
+                                  $image = $document->images;
+                        @endphp
                         <img
-                          src="/Documents_images/{{$document->images->value(0)}}"
+                          src="/Documents_images/{{$image[0]->image}}"
                           alt=""
                         />
                       </a>

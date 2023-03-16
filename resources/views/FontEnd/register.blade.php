@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{'assets/css/main.css'}}" />
   </head>
   <body>
-     <main class="p-5 m-5">
+     <main class="p-1 m-">
       <section class="container">
         <div class="container">
           <!-- ========== title-wrapper start ========== -->
@@ -39,23 +39,23 @@
         <div class="row g-0 ">
             <div class="col-lg-6">
               <div class="auth-cover-wrapper bg-primary-100">
-                indexFindexF   <div class="auth-cover">
-                  <div class="title text-center">
-                    <h1 class="text-primary mb-10">Get Started</h1>
-                    <p class="text-medium">
-                      Start creating the best possible user experience
-                      <br class="d-sm-block" />
-                      for you customers.
-                    </p>
-                  </div>
-                  <div class="cover-image">
-                    <img src="assets/images/auth/signin-image.svg" alt="" />
-                  </div>
-                  <div class="shape-image">
-                    <img src="assets/images/auth/shape.svg" alt="" />
+                 <div class="auth-cover">
+                    <div class="title text-center">
+                      <h1 class="text-primary mb-10">Get Started</h1>
+                      <p class="text-medium">
+                        Start creating the best possible user experience
+                        <br class="d-sm-block" />
+                        for you customers.
+                      </p>
+                    </div>
+                    <div class="cover-image">
+                      <img src="assets/images/auth/signin-image.svg" alt="" />
+                    </div>
+                    <div class="shape-image">
+                      <img src="assets/images/auth/shape.svg" alt="" />
+                    </div>
                   </div>
                 </div>
-              </div>
             </div>
             <!-- end col -->
             <div class="col-lg-6">
@@ -155,7 +155,7 @@
                       </button>
                     </div>
                     <p class="text-sm text-medium text-dark text-center">
-                      Already have an account? <a href="signin.html">Sign In</a>
+                      Already have an account? <a href="{{url('register')}}">Sign In</a>
                     </p>
                   </div>
                 </div>
@@ -166,16 +166,9 @@
           <!-- end row -->
         </div>
       </section>
-      <!-- ========== signin-section end ========== -->
-
-      <!-- ========== footer start =========== -->
      
-      <!-- ========== footer end =========== -->
     </main>
-    <!-- ======== main-wrapper end =========== -->
-
-    <!-- ========= All Javascript files linkup ======== -->
-  
+   
     <script src="{{'assets/js/bootstrap.bundle.min.js'}}"></script>
     <script src="{{'assets/js/Chart.min.js'}}"></script>
     <script src="{{'assets/js/dynamic-pie-chart.js'}}"></script>
