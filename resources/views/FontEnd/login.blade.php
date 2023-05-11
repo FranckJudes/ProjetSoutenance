@@ -62,76 +62,76 @@
                     Start creating the best possible user experience for you
                     customers.
                   </p>
-                  <form action="#">
-                    <div class="row">
-                      <div class="col-12">
-                        <div class="input-style-1">
-                          <label>Email</label>
-                          <input type="email" placeholder="Email" />
+                  <form action="{{'validation_login'}}" method="post">
+                    @csrf 
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="input-style-1">
+                              <label>Email</label>
+                              <input type="email" placeholder="Email" name="email"/>
+                            </div>
+                          </div>
+                          <!-- end col -->
+                          <div class="col-12">
+                            <div class="input-style-1">
+                              <label>Password</label>
+                              <input type="password" placeholder="Password" name="password"/>
+                            </div>
+                          </div>
+                          <!-- end col -->
+                          <div class="col-xxl-6 col-lg-12 col-md-6">
+                            <div class="form-check checkbox-style mb-30">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                value=""
+                                id="checkbox-remember"
+                              />
+                              <label
+                                class="form-check-label"
+                                for="checkbox-remember"
+                              >
+                                Remember me next time</label
+                              >
+                            </div>
+                          </div>
+                          <!-- end col -->
+                          <div class="col-xxl-6 col-lg-12 col-md-6">
+                            <div
+                              class="
+                                text-start text-md-end text-lg-start text-xxl-end
+                                mb-30
+                              ">
+                              <a href="#0" class="hover-underline"
+                                >Forgot Password?</a
+                              >
+                            </div>
+                          </div>
+                          <!-- end col -->
+                          <div class="col-12">
+                            <div
+                              class="
+                                button-group
+                                d-flex
+                                justify-content-center
+                                flex-wrap
+                              "
+                            >
+                              <button
+                                class="
+                                  main-btn
+                                  primary-btn
+                                  btn-hover
+                                  w-100
+                                  text-center
+                                "
+                              >
+                                Sign In
+                              </button>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                      <!-- end col -->
-                      <div class="col-12">
-                        <div class="input-style-1">
-                          <label>Password</label>
-                          <input type="password" placeholder="Password" />
-                        </div>
-                      </div>
-                      <!-- end col -->
-                      <div class="col-xxl-6 col-lg-12 col-md-6">
-                        <div class="form-check checkbox-style mb-30">
-                          <input
-                            class="form-check-input"
-                            type="checkbox"
-                            value=""
-                            id="checkbox-remember"
-                          />
-                          <label
-                            class="form-check-label"
-                            for="checkbox-remember"
-                          >
-                            Remember me next time</label
-                          >
-                        </div>
-                      </div>
-                      <!-- end col -->
-                      <div class="col-xxl-6 col-lg-12 col-md-6">
-                        <div
-                          class="
-                            text-start text-md-end text-lg-start text-xxl-end
-                            mb-30
-                          "
-                        >
-                          <a href="#0" class="hover-underline"
-                            >Forgot Password?</a
-                          >
-                        </div>
-                      </div>
-                      <!-- end col -->
-                      <div class="col-12">
-                        <div
-                          class="
-                            button-group
-                            d-flex
-                            justify-content-center
-                            flex-wrap
-                          "
-                        >
-                          <button
-                            class="
-                              main-btn
-                              primary-btn
-                              btn-hover
-                              w-100
-                              text-center
-                            "
-                          >
-                            Sign In
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- end row -->
+                        <!-- end row -->
                   </form>
                   <div class="singin-option pt-40">
                     <p class="text-sm text-medium text-center text-gray">

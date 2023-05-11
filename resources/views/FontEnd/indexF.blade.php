@@ -38,7 +38,7 @@
                                   $image = $document->images;
                         @endphp
                         <img
-                          src="/Documents_images/{{$image[0]->image}}"
+                          src=""
                           alt=""
                         />
                       </a>

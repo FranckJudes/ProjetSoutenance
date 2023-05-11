@@ -36,7 +36,7 @@ class ImportationController extends Controller
         if ($request->has('images')) {
             foreach ($request->file('images') as $image) 
             {
-                $imageName = $data['titre'].'-image-'.time().rand(1,1000).'.'.$image->extension();
+                $imageName = $data['titre'].'-image-'.time().rand(1,5000).'.'.$image->extension();
                 $image->move(public_path('Documents_images'),$imageName); 
                 Image::create([
                   'document_id' => $new_doc->id,
@@ -57,7 +57,7 @@ class ImportationController extends Controller
     }
     public function indexPage()
     {
-         $documents = Document::paginate(4);
+         $documents = Document::paginate(9);
          return view('FontEnd.indexF',compact('documents'));
 
     }
@@ -94,7 +94,7 @@ class ImportationController extends Controller
                       
                       
                 }
-                //"/ {{ "/ url("/'viewID'/".$document->id ) ."/ }}"/
+               
                 
                 return response($output);
         }
